@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Training Web App</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+  
+  
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      background: #FAFAFA; /* Material background color */
+      color: #212121; /* Material text color */
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #3F51B5; /* Material Indigo 500 */
+      color: white;
+      text-align: center;
+      padding: 1em 0;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      margin: 1em 0;
+    }
+
+    img#banner {
+      width: 100%;
+      height: auto;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2em auto;
+      padding: 0 1em;
+      background: #FFFFFF; /* Material card color */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      color: rgb(80, 80, 80);
+    }
+
+    p {
+      margin: 1em 0;
+      
+      font-size: 1em;
+    }
+
+    footer {
+      background: #212121; /* Material Grey 900 */
+      color: white;
+      text-align: center;
+      padding: 1em;
+    }
+  </style>
+  
+</head>
+<body>
+  <header>
+    <h1>Training Web App</h1>
+  </header>
+  {% include 'nav.html'%}
+ <div class="container-fluid">
+    <div class="row">
+      <div class="flex-shrink-0 p-3 bg-light" style="width: 280px;">
+        {% include 'sidebar.html' %}
+      </div>
+
+      <div class="col">
+        <main>
+
+    <img id="banner" src="/static/banner.jpg">
+    <h2>Main Page</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet mauris commodo quis imperdiet massa tincidunt. Id velit ut tortor pretium viverra suspendisse. Nunc sed velit dignissim sodales ut eu sem integer vitae. Scelerisque in dictum non consectetur a. Cras fermentum odio eu feugiat pretium nibh ipsum consequat. Ut venenatis tellus in metus. Purus in mollis nunc sed id semper risus in. Porttitor eget dolor morbi non arcu risus. Consequat semper viverra nam libero justo laoreet sit amet cursus. Libero id faucibus nisl tincidunt eget nullam. Vitae semper quis lectus nulla. Libero enim sed faucibus turpis.
+
+      Urna porttitor rhoncus dolor purus non enim praesent. Molestie a iaculis at erat pellentesque adipiscing commodo. Tortor id aliquet lectus proin nibh. Porta lorem mollis aliquam ut porttitor. Malesuada fames ac turpis egestas maecenas. Tempus quam pellentesque nec nam aliquam sem. Aenean euismod elementum nisi quis eleifend quam adipiscing. Purus in massa tempor nec. Ipsum faucibus vitae aliquet nec. Praesent semper feugiat nibh sed pulvinar. Nascetur ridiculus mus mauris vitae. Et tortor consequat id porta nibh venenatis cras sed. Cras sed felis eget velit aliquet. Felis imperdiet proin fermentum leo vel. Magna fermentum iaculis eu non diam phasellus vestibulum. Quam quisque id diam vel quam elementum pulvinar etiam. Sit amet purus gravida quis blandit turpis cursus in.
+    </p>
+    <h2>Job Openings</h2>
+    <div>
+      {% for job in jobs %}
+      {% include 'jobitem.html' %}
+      {% endfor %}
+ 
+    </div>  
+   </main>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <button>Contact Us</button>
+    <p>Copyright 2023</p>
+  </footer>
+
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="sidebars.js"></script>
+</body>
+
+</html>
