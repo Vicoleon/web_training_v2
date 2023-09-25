@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine, text
 import os
 
-my_secret=os.environ.get('DB_CONNECTION_STRING') #name of the secret in dev environment
+my_secret=os.environ['DB_CONNECTION_STRING'] #name of the secret in dev environment
 ##db connection string
 
 db_connection_string=my_secret
