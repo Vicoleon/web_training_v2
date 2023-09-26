@@ -64,8 +64,16 @@
   <header>
     <h1>{{job.title}}</h1>
   </header>
+  {% include 'nav.html' %}
 
-  <main>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="flex-shrink-0 p-3 bg-light" style="width: 280px;">
+        {% include 'sidebar.html' %}
+      </div>
+
+      <div class="col">
+        <main>
     <h3>Title</h3>
     <p>{{job.title}}</p>
 
