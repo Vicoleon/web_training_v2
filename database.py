@@ -2,7 +2,7 @@ import os
 
 import sqlalchemy
 from sqlalchemy import create_engine, text
-
+from sqlalchemy.exc import SQLAlchemyError
 my_secret=os.environ['DB_CONNECTION_STRING'] #name of the secret in dev environment
 ##db connection string
 
@@ -38,3 +38,19 @@ def load_job_from_db(id):
         else:
             return rows[0]._asdict()
 
+def add_application_to_db(job_id, application_data):
+    try:
+        with engine.connect() as conn:
+            statement = text('INSERT INTO applications (job_id, full_name, email, linkedin_url) VALUES (:job_id, :full_name, :email, :linkedin_url)')
+            conn.execute(
+                statement,
+                {
+                    'job_id': job_id,
+                    'full_name': application_data['full_name'],
+                    'email': application_data['email'],
+                    'linkedin_url': application_data['linkedin_url']
+                }
+            )
+            conn.commit()  # Commit the transaction if required
+    except SQLAlchemyError as e:
+        print(f"An error occurred: {str(e)}")
