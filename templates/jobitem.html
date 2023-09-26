@@ -1,5 +1,6 @@
 
-        <div class="border-bottom row" style="margin-bottom:16px;"> <!-- in order to use the col, the div has to be row --> 
+        
+<div class="border-bottom row" style="margin-bottom:16px;"> <!-- in order to use the col, the div has to be row --> 
         <div class="col-9">
           
           <h4 style="color:rgb(120,120,120);margin-bottom:4px;">{{job['title']}}</h4>
@@ -10,6 +11,6 @@
           {%endif %}
           </div>
           <div class="col-3">
-        <button type="button" class="btn btn-outline-primary">Apply</button>
+        <a href="/job/{{job['id']}}" type="buttom" class="btn btn-outline-primary float-right align-middle">Apply</a>
             </div>
     </div>
